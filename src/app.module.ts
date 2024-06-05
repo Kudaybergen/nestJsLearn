@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import { UserModule } from './users/user.module';
+import { MongooseModule } from '@nestjs/mongoose';
+import { ComputerModule } from './computer/computer.module';
 
 @Module({
-  imports: [UserModule],
+  imports: [MongooseModule.forRoot("mongodb+srv://kudaibergenovarhat940:nTohFIf0ed4ktOVt@one.rkfut0s.mongodb.net/nest"), ComputerModule],
   controllers: [],
   providers: [],
 })
