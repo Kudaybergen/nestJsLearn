@@ -25,4 +25,10 @@ export class ResponseTemplate{
         description: "i did not see how to implement this"
     })
     data: []
+
+    constructor(statusCode: number, path: string,  message: string){
+        this.statusCode = statusCode
+        this.path = path
+        this.message = message
+    }
 }
