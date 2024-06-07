@@ -31,7 +31,6 @@ export class CreateComputerDto{
         example: 16,
         description: "amount of RAM in gigabytes"
     })
-    @IsString()
     @IsNotEmpty()
     @Min(0)
     @Max(1000)
@@ -43,7 +42,6 @@ export class CreateComputerDto{
         example: 1024,
         description: "amount of NVRAM in gigabytes"
     })
-    @IsString()
     @IsNotEmpty()
     @Min(0)
     @Max(99999)

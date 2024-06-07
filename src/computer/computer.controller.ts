@@ -35,7 +35,7 @@ export class ComputerController {
   })
   async getComputerById(@Param('computerId') computerId: string){
     console.log(`computerId: ${computerId}`)
-    return this.computerService.findById(computerId)
+     return this.computerService.findById(computerId);
   }
 
   
