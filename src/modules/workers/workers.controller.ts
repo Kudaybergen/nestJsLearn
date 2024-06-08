@@ -1,6 +1,8 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { WorkersService } from './workers.service';
-import { ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiBadRequestResponse, ApiBody, ApiNotFoundResponse, ApiOkResponse, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { CreateWorkerDto } from './dto/createWorker.dto';
+import { Worker, WorkerSchema } from './entity/Worker.entity';
 
 
 @ApiTags("workers")
@@ -13,6 +15,13 @@ export class WorkersController {
     return await this.workersService.getAllWorkers()
   }
 
+
+  @Post("add")
+  async addWorker(@Body() newWorker: CreateWorkerDto): Promise<Worker | unknown | {}> {
+    return await this.workersService.addWorker(newWorker)
+  }
+
+  
   @Get("test1")
   async test1(): Promise<string> {
     return "test"

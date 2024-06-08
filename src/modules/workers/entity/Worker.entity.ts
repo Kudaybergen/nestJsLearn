@@ -1,8 +1,9 @@
-import { Prop } from "@nestjs/mongoose";
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { ApiPropertyOptional } from "@nestjs/swagger";
 import mongoose from "mongoose";
 import { WorkerStatus } from "src/enums"
 
+@Schema()
 export class Worker{
     @ApiPropertyOptional({
         example: "6662b626bf70191945eafd03",
@@ -38,3 +39,5 @@ export class Worker{
      })
     status?: WorkerStatus
 }
+
+export const WorkerSchema = SchemaFactory.createForClass(Worker)
